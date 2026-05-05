@@ -1,36 +1,220 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 💼 Investor Dashboard (Next.js + Redux)
 
-## Getting Started
+A highly interactive, frontend-only **investment dashboard** built using **Next.js**, **Redux Toolkit**, and **Recharts**.
 
-First, run the development server:
+This project simulates real-world backend behavior (filtering, pagination, async calls) without using any external APIs.
+
+---
+
+## 🌐 Live Demo
+
+👉 https://investor-dashboard-xh3v.vercel.app/
+
+---
+
+## 🚀 Features
+
+### 📊 Dashboard Overview
+
+* Total Investments
+* Average ROI
+* Risk distribution
+* Interactive charts
+
+### 🔍 Deal Explorer
+
+* Debounced search
+* Multi-filter system (Risk, ROI, Industry)
+* Sorting (ROI / Investment)
+* Pagination
+
+### ⭐ Recommendation Engine
+
+* Intelligent deal scoring based on:
+
+  * ROI
+  * Risk level
+* Top recommended deals with explanation
+
+### 📄 Deal Details Page
+
+* Company overview
+* ROI trend chart
+* Risk insights
+* Tab-based UI (Overview + Analysis)
+
+### 💾 My Interests
+
+* Save deals using LocalStorage
+* Persistent user tracking
+
+### 🏢 Corporate Dashboard
+
+* Industry distribution (Pie chart)
+* Investment analytics
+
+---
+
+## 🏗️ Architecture
+
+The project follows a **feature-based and scalable architecture**:
+
+```
+src/
+│
+├── app/                # Next.js App Router pages
+├── components/         # Reusable UI components
+├── services/           # API simulation layer
+├── store/              # Redux Toolkit (global state)
+├── hooks/              # Custom hooks (debounce)
+├── utils/              # Business logic (recommendation, storage)
+├── data/               # Mock datasets
+```
+
+### Key Principles
+
+* Separation of concerns
+* Reusable components
+* No business logic inside UI components
+* Scalable folder structure
+
+---
+
+## 🔄 Data Flow Design
+
+The application simulates a real backend flow:
+
+```
+UI (React Components)
+        ↓
+Redux Store (Global State)
+        ↓
+Async Thunk (loadDeals)
+        ↓
+Service Layer (dealService)
+        ↓
+Mock Data (data/deals.js)
+```
+
+### Flow Explanation
+
+1. User interacts with UI (search/filter)
+2. Redux updates global state
+3. Async thunk triggers data fetch
+4. Service layer simulates API (with delay)
+5. Data returned and stored in Redux
+6. UI updates automatically
+
+---
+
+## ⚙️ Optimization Strategies
+
+### ⚡ Performance Optimizations
+
+* Debounced search (reduces unnecessary calls)
+* useMemo for recommendation engine
+* Efficient filtering in service layer
+* Pagination to limit data rendering
+
+### 🧠 State Management
+
+* Redux Toolkit for predictable state
+* Centralized data handling
+* Loading and error state management
+
+### 🎯 UI Optimization
+
+* Component reusability
+* Clean layout system
+* Minimal re-renders
+
+---
+
+## 🎨 UI/UX Highlights
+
+* Dark mode dashboard
+* Fintech-style layout
+* Responsive design
+* Smooth hover interactions
+* Clean typography and spacing
+
+---
+
+## 📦 Installation & Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Yogi9454/investor-dashboard.git
+cd investor-dashboard
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run locally:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open in browser:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📸 Screenshots
 
-To learn more about Next.js, take a look at the following resources:
+### Dashboard
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![Dashboard](./public/screenshots/dashboard.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Deal Details
 
-## Deploy on Vercel
+![Deal Details](./public/screenshots/details.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Corporate Dashboard
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+![Corporate](./public/screenshots/corporate.png)
+
+---
+
+## 📌 Assignment Coverage
+
+✔ Data Layer (Mock datasets)
+✔ Service Layer (API simulation)
+✔ Dashboard Overview
+✔ Deal Explorer
+✔ Recommendation Engine
+✔ Data Visualization
+✔ Redux State Management
+✔ Performance Optimization
+✔ Deployment (Vercel)
+
+---
+
+## 🧑‍💻 Author
+
+**Yogesh Shete**
+
+* GitHub: https://github.com/Yogi9454
+* LinkedIn: *(Add your LinkedIn link)*
+
+---
+
+## ⭐ Conclusion
+
+This project demonstrates:
+
+* Real-world frontend architecture
+* Scalable state management
+* Backend simulation techniques
+* Interactive data visualization
+
+---
