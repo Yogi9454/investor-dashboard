@@ -1,9 +1,11 @@
+"use client";
 
-import IndustryPieChart from "../components/IndustryPieChart";
+
+import IndustryPieChart from "@/components/IndustryPieChart";
 <IndustryPieChart data={data} />
 
 
-"use client";
+
 
 
 import { useSelector } from "react-redux";
